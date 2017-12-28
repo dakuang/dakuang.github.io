@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+<!--  browser shouldn't cache page, until site is final -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+  
+<meta charset="utf-8">
+<title>Math 191 (Winter 2016)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Special Topics: Numerical Linear Algebra for Data Analysis">
+<meta name="author" content="Da Kuang, Department of Mathematics, UCLA">
+
+<!-- Le styles -->
+<link href="../css/bootstrap.css" rel="stylesheet">
+<style>
+body {
+padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+.vis {
+color: #3366CC;
+}
+.data {
+color: #FF9900;
+}
+table#contact td{
+  border:none;
+}
+table#contact strong{
+  color: #333;
+}
+table#schedule {
+  font-size: 14px;
+}
+table#schedule td {
+  border-right: 1px dashed #ccc;
+}
+</style>
+<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+
+  
+<body>
+
+<div class="container">
+
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<ul class="nav">
+<li><a href="#syllabus">Syllabus</a></li>
+<li><a href="#homework">Homework</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#schedule">Schedule</a></li>
+</ul>
+</div>
+</div>
+
+<div class="page-header" style="margin-bottom: 10px">
+<h1 style="margin-top:10px;"><span style="font-size:16px; font-weight: normal;">MATH 191, Winter 2016</span><br/>Special Topics: Numerical Linear Algebra for Data Analysis</h1>
+<span style="font-size:20px; line-height:1.5em;"><strong><a style="color:#444444;" href="http://www.ucla.edu">UCLA</a>, <a style="color:#444444;" href="http://www.math.ucla.edu">Department of Mathematics</a></strong></span><br>
+</div>
+
+
+<ul class="unstyled">
+<font color="red">For the current offering of this course, please go to: <a href="../math191_2017/">http://math.ucla.edu/~dakuang/math191_2017/</a></font>
+</ul>
+
+
+<p><b>Instructor: </b><a href="http://math.ucla.edu/~dakuang/" style="color:#444;">Da Kuang</a></p>
+<p><b>Course description:</b><br/>
+This course introduces numerical linear algebra from a data analysis perspective. Emphasis will be given to matrix computation arising from unsupervised clustering, dimension reduction, and optimization. Students will read and implement recent research papers on large-scale machine learning involving matrix computations as final projects. Overall, this course offers a solid understanding of the theory and practical implementation of matrix algorithms, which is important for effectively using existing machine learning tools and packages as well as creating new ones.</p>
+<p><b>Prerequisites:</b><br/>
+Linear algebra (33A or equivalent) required. Introductory programming (PIC 10A or equivalent) required.<br/>
+Linear algebra (115AB or equivalent) recommended. Familiarity with Matlab or Python (numpy) programming recommended. <b>You will need to learn Python yourself by reading tutorials and working on projects.</b></p>
+<p><b>Relationship with other courses:</b><br/>
+In terms of numerical algorithms, this course is in some sense complementary to topics in <a href="http://www.math.ucla.edu/ugrad/courses/math/151A">151A</a> and <a href="http://www.math.ucla.edu/ugrad/courses/math/151B">151B</a>.<br/>
+In terms of applications of numerical linear algebra, this course is devoted to data analysis, as opposed to solving PDEs in the graduate course MATH 270.
+</p>
+
+<h4><font color="red">*New*</font> Selected Final Project Report</h4>
+<ul class="unstyled">
+<li>Kexin Yu, Yunqing Jin: <a href="report/final_report_YJ.pdf">Predict attribute labels for restaurants using user-submitted photos</a></li>
+<li>Neil Liu, Ruochen Jiang, Wenqiao Xie: <a href="report/final_report_LJX.pdf">Evaluation of Locality-constrained Linear Coding for Image Classification</a></li>
+<li>Zigeng Liu, Ruichao Min, Xiaochen Zhang: <a href="report/final_report_LMZ.pdf">Convolutional Neural Network for Multi-label Image Classification</a></li>
+<li>Lauren Dunlap, Kevin Stangl, Aaron Zhou Qian: <a href="report/final_report_DSQ.pdf">Evaluation of Matrix Completion and Low-Rank SVD via Fast Alternating Least Squares</a></li>
+</ul>
+
+<a name="syllabus"></a>    
+<h4>Syllabus</h4>
+<ul>
+<li>Foundations</li>
+<ul>
+<li>Understanding matrix-vector and matrix-matrix multiplication</li>
+<li>Singular value decomposition (SVD)</li>
+<li>Conditioning of a matrix</li>
+<li>Algorithms for least-squares fitting</li>
+<li>Matrix factorizations</li>
+</ul>
+<li>Applications in data analysis</li>
+<ul>
+<li>Sparse coding</li>
+<li>Locally linear embedding</li>
+<li>Principal component analysis</li>
+<li>Nonnegative matrix factorization</li>
+<li>Spectral clustering</li>
+</ul>
+<li>Implementation issues</li>
+<ul>
+<li>Numerical software stack</li>
+<li>Sparse matrices and special structures</li>
+<li>Parallel matrix algorithms</li>
+</ul>
+</ul>
+
+<h4>Textbooks and references</h4>
+
+<ul class="unstyled">
+
+<li>Trefethen and Bau, Numerical linear algebra, 1997.</li>
+<strike>- Free access option: <a href="https://books.google.com/books?id=bj-Lu6zjWbEC&printsec=frontcover&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false">[google book]</a></strike> (no longer available)<br/>
+- Purchase option: <a href="http://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617/">[amazon]</a> <a href="http://bookstore.siam.org/ot50/">[SIAM]</a>
+(for the SIAM store link, you can register for free student membership and get 30% discount)<br/>
+<br/>
+<li>Additional references (posted here as the course proceeds):</li>
+<li>Leskovec, Rajaraman, and Ullman, <a href="http://www.mmds.org/">Mining massive datasets</a> (online book)</li>
+<li>Trevor Hastie, Robert Tibshirani, and Jerome Friedman, <a href="http://statweb.stanford.edu/~tibs/ElemStatLearn/">Elements of Statistical Learning</a> (online book)</li>
+<li><a href="https://developers.google.com/edu/python/?hl=en">Google Python class</a></li>
+<li><a href="https://docs.python.org/2/tutorial/">Python tutorial</a></li>
+<li><a href="https://docs.scipy.org/doc/numpy-dev/user/quickstart.html">numpy tutorial</a></li>
+</ul>
+
+<h4>Slides</h4>
+
+<ul class="unstyled">
+Slides are available on your CCLE website.
+</ul>
+
+    
+<h4>Grading</h4>
+<ul>
+<li>40% Homework</li>
+<li>20% In-class midterm</li>
+<li>40% Final project and presentation</li>
+</ul>
+ 
+
+<h4>Late Submissions Policy</h4>
+<ul>
+<li>No late homework allowed. However, there are no penalties for medical reasons or emergencies. You must submit a doctor's note or an official letter explaining the emergency.</li>
+</ul>
+
+<a name="homework"></a>
+<h4>Homework</h4>
+
+Please note that while discussion is allowed and encouraged, individual students must write up their own answers and computer programs.
+<br/>
+All the students must observe the <a href="http://www.deanofstudents.ucla.edu/Portals/16/Documents/StudentGuide.pdf">conduct code</a>.
+<br/><br/>
+
+<ul>
+<li>[10%] <a href="homework/hw1.pdf">HW1</a></li>
+<li>[10%] <a href="homework/hw2.pdf">HW2</a></li>
+<li>[10%] <a href="homework/hw3.pdf">HW3</a></li>
+<li>[10%] <a href="homework/hw4.pdf">HW4</a></li>
+</ul>
+
+<a name="projects"></a>
+<h4>Projects</h4>
+<p><a href="homework/project.pdf">Project Instructions</a></p>
+<p>In the final project, you will:
+<ul>
+<li>Form groups of 2-3 persons</li>
+<li>Read and implement the algorithm described in one of the following papers</li>
+</li>Reproduce the experiment results</li>
+<li>Apply the algorithm to a real data set</li>
+</ul>
+Each group should communicate with the instructor about the scope of experiments and the deliverables. You will very likely need a little literature search in order to understand the algorithms.<br/>
+If the implementation is available online, you should write it in a different programming language. Bonus points for significant improvement of the original algorithm/implementation.</p>
+<p><b>Example paper list: (for papers considered for implementation for the current quarter, please refer to the "Paper walk-through" slides on CCLE)</b>
+<ul>
+<li><a href="http://arxiv.org/pdf/0909.4061v2.pdf">Finding structure with randomness: Probabilistic algorithms for constructing approximate matrix decompositions</a>, 2009.</li>
+<li><a href="http://arxiv.org/pdf/1410.2596.pdf">Matrix completion and low-rank SVD via fast alternating least squares</a>, 2014.</li>
+<li><a href="http://yifanhu.net/PUB/cf.pdf">Collaborative filtering for implicit feedback</a>, 2008.</li>
+<li><a href="http://perception.csl.illinois.edu/matrix-rank/Files/RPCA_JACM.pdf">Robust principal component analysis?</a>, 2011.</li>
+<li><a href="http://bengal.missouri.edu/~kes25c/nl2.pdf">A non-local algorithm for image denoising</a>, 2005.</li>
+<li><a href="http://arxiv.org/pdf/cs/0212008.pdf">Principal Manifolds and Nonlinear Dimension Reduction via Local Tangent Space Alignment</a>, 2004.</li>
+<li><a href="http://arxiv.org/pdf/1302.3913v2.pdf">Multiclass data segmentation using diffuse interface methods on graphs</a>, 2013.</li>
+<li><a href="https://web.stanford.edu/~hastie/Papers/mazumder10a.pdf">Spectral regularization algorithms for learning large incomplete matrices</a>, 2010.</li>
+<li><a href="http://papers.nips.cc/paper/2655-maximum-margin-matrix-factorization.pdf">Maximum-margin matrix factorization</a>, 2005.</li>
+<li><a href="http://papers.nips.cc/paper/2979-efficient-sparse-coding-algorithms.pdf">Efficient sparse coding algorithms</a>, 2007</li>
+<li><a href="https://www.robots.ox.ac.uk/~vgg/rg/papers/wang_etal_CVPR10.pdf">Locality-constrained linear coding for image classification</a>, 2010.</li>
+</ul>
+</p>
+
+<a name="schedule"></a>
+<h4>Schedule</h4>
+
+<table id="schedule" class="table table-hover table-condensed">
+<thead>
+<tr>
+<th>Date</th>
+<th>Mon</th>
+<th>Wed</th>
+<th>Fri</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="width:80px;">Jan 4<br />Jan 6<br />Jan 8</td>
+  <td>Introduction<br/><a href="https://developers.google.com/edu/python/set-up">Python learning: Set up</a></td>
+  <td>Matrix-vector multiplication<br/>Reading: NLA, Lecture 1<br/><a href="https://developers.google.com/edu/python/introduction">Python learning: Introduction</a></td>
+  <td>Matrix-matrix multiplication<br/>Range, subspace, norms<br/>Reading: NLA, Lecture 1, 3<br/><a href="https://developers.google.com/edu/python/strings">Python learning: Strings</a></td>
+</tr>
+<tr>
+  <td style="width:80px;">Jan 11<br />Jan 13<br />Jan 15</td>
+  <td>Numerical software stack<br/><a href="https://developers.google.com/edu/python/exercises/basic">Python exercises: string1.py</a></td>
+  <td>K-means clustering<br/><b>HW1 out</b><br/>Optional reading: MMDS, Chap 7<br/><a href="https://developers.google.com/edu/python/lists">Python learning: Lists</a></td>
+  <td>Singular value decomposition<br/>Reading: NLA, Lecture 2, 4<br/><a href="https://developers.google.com/edu/python/sorting">Python learning: Sorting</a></td>
+</tr>
+<tr>
+  <td style="width:80px;">Jan 18<br />Jan 20<br />Jan 22</td>
+  <td>(MLK holiday)</td>
+  <td>Singular value decomposition<br/><b>HW1 due; HW2 out</b><br/>Reading: NLA, Lecture 4, 5<br/><a href="https://developers.google.com/edu/python/exercises/basic">Python exercises: list1.py</a></td>
+  <td>Singular value decomposition<br/>Principal component analysis<br/>Reading: NLA, Lecture 5<br/><a href="https://developers.google.com/edu/python/dict-files">Python learning: Dicts and files</a></td>
+</tr>
+<tr>
+  <td style="width:80px;">Jan 25<br />Jan 27<br />Jan 29</td>
+  <td>Principal component analysis<br/><a href="examples/orl.py">Code</a> <a href="examples/orl.zip">Data</a><br/>Optional reading: ESL Chap 14.5.1<br/><a href="https://developers.google.com/edu/python/exercises/basic">Python exercises: wordcount.py</a></td>
+  <td>Conditioning<br/>Reading: NLA, Lecture 12<br/><b>HW2 due; HW3 out</b><br/><a href="https://developers.google.com/edu/python/exercises/basic">Python exercises: string2.py</a></td>
+  <td>Projectors<br/>Reading: NLA, Lecture 6<br/><b>Team formation due</b><br/><a href="https://developers.google.com/edu/python/exercises/basic">Python exercises: list2.py</a></td>
+</tr>
+<tr>
+  <td style="width:80px;">Feb 1<br />Feb 3<br />Feb 5</td>
+  <td>Projectors<br/>Least squares problem<br/>Reading: NLA, Lecture 11<br/><a href="https://developers.google.com/edu/python/exercises/basic">Python exercises: mimic.py</a></td>
+  <td>Techniques for introducing zeros<br/>for computing LU, QR, SVD/EVD<br/>Reading: NLA, Lecture 10<br/><b>HW4 out</b><br/><a href="https://developers.google.com/edu/python/regular-expressions">Python learning: Regular expressions</a></td>
+  <td>Project overview<br/>(object recognition, movie recommendation,<br/>Yelp challenge)<br/><b>HW3 due</b><br/><a href="https://developers.google.com/edu/python/exercises/baby-names">Python exercises: Baby names</a></td>
+</tr>
+<tr>
+  <td style="width:80px;">Feb 8<br />Feb 10<br />Feb 12</td>
+  <td>Project overview<br/>(paper walk-through)<br/><a href="https://developers.google.com/edu/python/utilities">Python learning: Utilities</a></td>
+  <td>Sparse coding<br/><b>HW4 due</b><br/><a href="https://developers.google.com/edu/python/exercises/copy-special">Python exercises: Copy files</a></td>
+  <td>Sparse coding<br/><a href="https://developers.google.com/edu/python/exercises/log-puzzle">Python exercises: Log puzzle</a></td>
+</tr>
+<tr>
+  <td style="width:80px;">Feb 15<br />Feb 17<br />Feb 19</td>
+  <td>(Presidents' Day holiday)</td>
+  <td><b>Midterm</b></td>
+  <td>Locally linear embedding</td>
+</tr>
+<tr>
+  <td style="width:80px;">Feb 22<br />Feb 24<br />Feb 26</td>
+  <td>Locally linear embedding<br/><b>Project proposal due</b></td>
+  <td>Sparse matrices</td>
+  <td>Spectral clustering</td>
+</tr>
+<tr>
+  <td style="width:80px;">Feb 29<br />Mar 2<br />Mar 4</td>
+  <td>Spectral clustering</td>
+  <td>Nonnegative matrix factorization</td>
+  <td>Random projection<br/>Randomized SVD</td>
+</tr>
+<tr>
+  <td style="width:80px;">Mar 7<br />Mar 9<br />Mar 11</td>
+  <td><b>Final presentation</b></td>
+  <td><b>Final presentation</b></td>
+  <td><b>Final presentation</b></td>
+</tr>
+<tr>
+  <td style="width:80px;">Mar 14<br />Mar 16<br />Mar 18</td>
+  <td></td>
+  <td></td>
+  <td><b>Final project report due</b><br/>(No final exam)</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+</div> <!-- /container -->
+
+</body>
+</html>

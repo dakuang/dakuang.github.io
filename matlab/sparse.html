@@ -1,0 +1,18 @@
+<style type="text/css">
+<!--
+.STYLE1 {font-family: "Courier New"}
+-->
+</style>
+<title>About the efficiency of growing and shrinking sparse matrices</title><p>by Da Kuang, Jul. 14, 2011</p>
+<p><strong>About the efficiency of growing and shrinking sparse matrices</strong></p>
+<p>Platform: Matlab 2009a on ion.</p>
+<p>I am studying the Matlab code of &quot;Zelnik-Manor and Perona, Self-Tuning Spectral Clustering&quot;, available at: <a href="http://webee.technion.ac.il/~lihi/Demos/SelfTuningClustering.html" target="_blank">http://webee.technion.ac.il/~lihi/Demos/SelfTuningClustering.html</a></p>
+<p>In the file <span class="STYLE1">dist2aff.c</span>, the author mentioned that the Matlab command to compute the affinity matrix of a given distance matrix is slow for some reason. So the C function <span class="STYLE1">A = dist2aff(D,SS)</span> was written to accelerate the construction of affinity matrix. Here we have <span class="STYLE1">n</span> data points. The <span class="STYLE1">n*n</span> matrix <span class="STYLE1">D</span> contains all the pairwise distances, <span class="STYLE1">SS</span> is a scaling parameter (set to 0.1). <span class="STYLE1">D</span> is a sparse matrix, where an entry is nonzero if and only if the true affinity is nonzero. Thus ideally, the affinity matrix <span class="STYLE1">A</span> should have the same sparsity pattern with <span class="STYLE1">D</span>.</p>
+<p>The Matlab command to compute the affinity matrix is <span class="STYLE1">W = D; W(ind_non_zero)=exp(-D(ind_non_zero)/SS^2);</span>, where <span class="STYLE1">ind_non_zero</span> is an array of indices for nonzero entries in <span class="STYLE1">D</span>. The addressing by <span class="STYLE1">ind_non_zero</span> in the assignment is necessary because otherwise the zero entries in <span class="STYLE1">D</span> (indicating zero affinity) would become 1 in <span class="STYLE1">W</span>.</p>
+<p>I happened to discover that when <span class="STYLE1">D</span> is built with an image without scaling (containing values of 0-255), this assignment is very slow; and that when <span class="STYLE1">D</span> is built with an scaled image (containing values of 0-1), this assignment is very fast. The reason lies in the fact that <span class="STYLE1">D</span> built with unscaled image contains many entries with huge values (e.g. 50000), and these entries becomes 0 in <span class="STYLE1">W</span> (e.g. <span class="STYLE1">exp(-5000000)</span>). Thus the sparsity pattern of <span class="STYLE1">W</span> is different from that of <span class="STYLE1">D</span>: 141264 nonzero entries are transformed into 23164 nonzero entries in my experiment.</p>
+<p>In the above Matlab command, <span class="STYLE1">W</span> is first set to be equal to <span class="STYLE1">D</span>. When some nonzero entries of <span class="STYLE1">W</span> disappear, the arrays containing row and column indices will shrink. The software is possibly written in the way that these arrays shrink whenever a nonzero entry becomes zero, or almost the entire array is copied when an entry near the beginning of the matrix causes the array to shrink.</p>
+<p>A remedy to the above Matlab command is to first build an empty sparse matrix <span class="STYLE1">W</span>, and then the arrays containing row and column indices will grow:</p>
+<p class="STYLE1">W = sparse(size(D,1), size(D,2)); W(ind_non_zero)=exp(-D(ind_non_zero)/SS^2);</p>
+<p>So our conclusion here is that it is better to let a sparse matrix grow, instead of shrink.</p>
+<p>&nbsp;</p>
+<p>Last updated: Jul. 14, 2011 </p>

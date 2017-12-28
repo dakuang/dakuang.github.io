@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+<!--  browser shouldn't cache page, until site is final -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+  
+<meta charset="utf-8">
+<title>Math 285J (Spring 2016)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Graduate Seminar: Machine Learning">
+<meta name="author" content="Andrea Bertozzi and Da Kuang, Department of Mathematics, UCLA">
+
+<!-- Le styles -->
+<link href="../css/bootstrap.css" rel="stylesheet">
+<style>
+body {
+padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+.vis {
+color: #3366CC;
+}
+.data {
+color: #FF9900;
+}
+table#contact td{
+  border:none;
+}
+table#contact strong{
+  color: #333;
+}
+table#schedule {
+  font-size: 14px;
+}
+table#schedule td {
+  border-right: 1px dashed #ccc;
+}
+</style>
+<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+
+  
+<body>
+
+<div class="container">
+
+<div class="page-header" style="margin-bottom: 10px">
+<h1 style="margin-top:10px;"><span style="font-size:16px; font-weight: normal;">MATH 285J, Spring 2016</span><br/>Graduate Seminar: Machine Learning</h1>
+<span style="font-size:20px; line-height:1.5em;"><strong><a style="color:#444444;" href="http://www.ucla.edu">UCLA</a>, <a style="color:#444444;" href="http://www.math.ucla.edu">Department of Mathematics</a></strong></span><br>
+</div>
+
+
+<p><b>Instructor: </b>
+<br/><a href="http://math.ucla.edu/~bertozzi/" style="color:#444;">Andrea Bertozzi</a>
+<br/><a href="http://math.ucla.edu/~dakuang/" style="color:#444;">Da Kuang</a></p>
+<p><b>Course description:</b><br/>
+This is a graduate-level seminar course that introduces advanced machine learning methods. Topics and relevant papers are listed below. You will work on cutting-edge research problems and write course reports that can potentially lead to publications. You are expected to read selected papers and write programs for numerical experiments, where the choice of programming language will depend on your project topic. At the end of this course, you will present your project to the class.</p>
+
+<a name="schedule"></a>
+<h4>Schedule</h4>
+
+<table id="schedule" class="table table-hover table-condensed">
+<thead>
+<tr>
+<th>Date</th>
+<th>Mon</th>
+<th>Wed</th>
+<th>Fri</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="width:80px;">Mar 28<br />Mar 30<br />Apr 1</td>
+  <td>Course introduction<br/>Data sets</td>
+  <td>Point process models</td>
+  <td>Machine learning overview</td>
+</tr>
+<tr>
+  <td style="width:80px;">Apr 4<br />Apr 6<br />Apr 8</td>
+  <td>PCA</td>
+  <td>K-means</td>
+  <td>Spectral clustering</td>
+</tr>
+<tr>
+  <td style="width:80px;">Apr 11<br />Apr 13<br />Apr 15</td>
+  <td>Nonnegative matrix factorization</td>
+  <td>Nonnegative matrix factorization</td>
+  <td>Latent Dirichlet allocation</td>
+</tr>
+<tr>
+  <td style="width:80px;">Apr 18<br />Apr 20<br />Apr 22</td>
+  <td>Review of diffuse interface PDE</td>
+  <td>Basics of GL and MBO</td>
+  <td>Theorems for Gamma convergence</td>
+</tr>
+<tr>
+  <td style="width:80px;">Apr 25<br />Apr 27<br />Apr 29</td>
+  <td>Theorems for convergence stability<br/>of graph GL</td>
+  <td>Theorems on mean curvature<br/>PageRank</td>
+  <td>Global/Local minimizers</td>
+</tr>
+<tr>
+  <td style="width:80px;">May 2<br />May 4<br />May 6</td>
+  <td>Modularity optimization</td>
+  <td>Modularity optimization</td>
+  <td>Parallel methods</td>
+</tr>
+<tr>
+  <td style="width:80px;">May 9<br />May 11<br />May 13</td>
+  <td>Computer architectre overview</td>
+  <td>Computer architecture overview</td>
+  <td>Numerical software stacks</td>
+</tr>
+<tr>
+  <td style="width:80px;">May 16<br />May 18<br />May 20</td>
+  <td>Visualization</td>
+  <td>Matrix completion</td>
+  <td>Convolutional neural networks</td>
+</tr>
+<tr>
+  <td style="width:80px;">May 23<br />May 25<br />May 27</td>
+  <td><b>Project presentation</b></td>
+  <td><b>Project presentation</b></td>
+  <td><b>Project presentation</b></td>
+</tr>
+<tr>
+  <td style="width:80px;">May 30<br />Jun 1<br />Jun 3</td>
+  <td>(Memorial Day holiday)</td>
+  <td><b>Project presentation</b></td>
+  <td><b>Project presentation</b></td>
+</tr>
+<tr>
+  <td style="width:80px;">Jun 6<br /><br /></td>
+  <td>(No final exam)</td>
+  <td></td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+
+<a name="syllabus"></a>
+<h4>Paper lists (constantly updated)</h4>
+<ul>
+<li>Graph-based energy minimization</li>
+<ul>
+<li>Bertozzi and Flenner, <a href="http://www.math.ucla.edu/~bertozzi/papers/MMS2012-final.pdf">Diffuse Interface Models on Graphs for Classification of High Dimensional Data</a>, SIAM Multiscale Modeling and Simulation, 2012.</li>
+<li>Merkurjev et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/MBOgraphsFinal.pdf">An MBO Scheme on Graphs for Classification and Image Processing</a>, SIAM J. Imaging Sciences, 2013.</li>
+<li>Garcia-Cardona et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/PAMI2014.pdf">Multiclass Data Segmentation Using Diffuse Interface Methods on Graphs</a>, PAMI, 2014.</li>
+<li>Luo and Bertozzi, <a href="ftp://ftp.math.ucla.edu/pub/camreport/cam16-12.pdf">Convergence Analysis of the Graph Allen-Cahn Scheme</a>, submitted 2016.</li>
+<li>Meyer et al., A year in Madrid as described through the analysis of geotagged Twitter data, submitted 2015.</li>
+<li>Merkurjev et al., <a href="ftp://ftp.math.ucla.edu/pub/camreport/cam16-06.pdf">Modified Cheeger and Ratio Cut Methods Using the Ginzburg-Landau Functional for Classification of High-Dimensional Data</a>, submitted 2016.</li>
+<li>Lai et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/microblog.pdf">Topic Time Series Analysis of Microblogs</a>, submitted 2014.</li>
+<li>Fox et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/JASAFox2016-AuthorFinal.pdf">Modeling e-mail networks and inferring leadership using self-exciting point processes</a>, J. Am. Stat. Assoc., 2015.</li>
+<li>Zipkin et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/ZipkinEJAMFinal.pdf">Point-process models of social network interactions: parameter estimation and missing data recovery</a>, Eur. J. Appl. Math., 2015.</li>
+<li>Qin et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/SPIE2015.pdf">Detecting Plumes in LWIR Using Robust Nonnegative Matrix Factorization with Graph-based Initialization</a>, SPIE Defense and Security, 2015.</li>
+<li>Merkurjev et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/JMIV15-final.pdf">Global binary optimization on graphs for classification of high dimensional data</a>, J. Math. Imag. Vis., 2015.</li>
+<li>Hu et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/EMMCVPRfinal.pdf">Multi-class Graph Mumford-Shah Model for Plume Detection using the MBO scheme</a>, EMMCVPR 2015.</li>
+<li>Merkurjev et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/ICIP-MBO-2014.pdf">Graph MBO method for multiclass segmentation of hyperspectral stand-off detection video</a>, ICIP 2014.</li>
+<li>Woodworth et al., <a href="http://rsta.royalsocietypublishing.org/content/372/2028/20130403.full.pdf">Nonlocal Crime Density Estimation Incorporating Housing Information</a>, Phil. Trans. Roy. Soc. A, 2014.</li>
+<li>van Gennip et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/graph_curve.pdf">Mean curvature, threshold dynamics, and phase field theory on finite graphs</a>, Milan J. of Math., 2014.</li>
+<li>Sunu et al., <a href="http://proceedings.spiedigitallibrary.org/proceeding.aspx?articleid=1882608">Simultaneous spectral analysis of multiple video sequence data for LWIR gas plumes</a>, SPIE Defense and Security, 2014.</li>
+<li>Merkurjev et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/AML-2014-final.pdf">Diffuse interface methods for multiclass segmentation of high-dimensional data</a>, Applied Math. Letters, 2014.</li>
+<li>Hu et al., <a href="http://www.math.ucla.edu/~bertozzi/papers/SIAPHuiyi.pdf">A Method Based on Total Variation for Network Modularity Optimization using the MBO Scheme</a>, SIAM J. Appl. Math., 2013.</li>
+<li>van Gennip et al., <a href="http://arxiv.org/pdf/1206.4969v3.pdf">Community detection using spectral clustering on sparse geosocial data</a>, SIAP 2013.</li>
+<li>Hu et al. <a href="http://arxiv.org/pdf/1211.7180v1.pdf">Multislice Modularity Optimization in Community Detection and Image Segmentation</a>, ICDM 2012.</li>
+</ul>
+<li>Spectral clustering</li>
+<ul>
+<li>von Luxburg, <a href="http://arxiv.org/pdf/0711.0189v1.pdf">A tutorial on spectral clustering</a>, Statistics and Computing, 2007.</li>
+<li>Shi and Malik, <a href="http://www.cs.berkeley.edu/~malik/papers/SM-ncut.pdf">Normalized cuts and image segmentation</a>, PAMI, 2000.</li>
+<li>Ng et al., <a href="http://papers.nips.cc/paper/2092-on-spectral-clustering-analysis-and-an-algorithm.pdf">On spectral clustsering: Analysis and an algorithm</a>, NIPS 2001.</li>
+<li>Yu and Shi, <a href="http://www1.icsi.berkeley.edu/~stellayu/publication/doc/2003kwayICCV.pdf">Multiclass spectral clustering</a>, ICCV 2003.</li>
+<li>Zelnik-Manor and Perona, <a href="http://papers.nips.cc/paper/2619-self-tuning-spectral-clustering.pdf">Self-tuning spectral clustering</a>, NIPS 2004.</li>
+<li>Zha et al., <a href="http://ranger.uta.edu/~chqding/papers/KmeansNIPS2001.pdf">Spectral relaxation for k-means clustering</a>, NIPS 2001.</li>
+<li>Ding et al., <a href="http://ranger.uta.edu/~chqding/papers/NMF-SDM2005.pdf">On the Equivalence of Nonnegative Matrix Factorization and Spectral Clustering</a>, SDM 2005.</li>
+<li>Kokiopoulou et al., <a href="http://www-users.cs.umn.edu/~saad/PDF/umsi-2009-31.pdf">Trace optimization and eigenproblems in dimension reduction methods</a>, NLA with application, 2010.</li>
+<li>Fowlkes et al., <a href="http://www.cs.berkeley.edu/~malik/papers/FBCM-nystrom.pdf">Spectral Grouping Using the Nyström Method</a>, PAMI, 2004.</li>
+</ul>
+<li>Nonnegative matrix factorization, latent Dirichlet allocation:</li>
+<ul>
+<li>Lee and Seung, <a href="http://www.columbia.edu/~jwp2128/Teaching/W4721/papers/nmf_nature.pdf">Learning the parts of objects by non-negative matrix factorization</a>, Nature, 1999.</li>
+<li>Kim et al., <a href="http://www.cc.gatech.edu/~hpark/papers/jgo.pdf">Algorithms for nonnegative matrix and tensor factorizations: A unified view based on block coordinate descent framework</a>, JOGO, 2013.</li>
+<li>Lin, <a href="https://www.csie.ntu.edu.tw/~cjlin/papers/pgradnmf.pdf">Projected gradient methods for nonnegative matrix factorization</a>, Neural Computation, 2007.</li>
+<li>Donoho and Stodden, <a href="https://web.stanford.edu/~vcs/papers/NMFCDP.pdf">When Does Non-Negative Matrix Factorization Give a Correct Decomposition into Parts?</a>, NIPS 2003.</li>
+<li>Huang et al., <a href="http://www.ece.umn.edu/~nikos/06630130.pdf">Non-Negative Matrix Factorization Revisited: Uniqueness and Algorithm for Symmetric Decomposition</a>, Trans. Signal Processing, 2014.</li>
+<li>Kuang et al., <a href="http://math.ucla.edu/~dakuang/pub/sdm0125.pdf">Symmetric Nonnegative Matrix Factorization for Graph Clustering</a>, SDM 2012.</li>
+<li>Arora et al., <a href="http://cs.nyu.edu/~dsontag/papers/AroraEtAl_icml13.pdf">A practical algorithm for topic modeling with provable guarantees</a>, ICML 2013.</li>
+<li>Blei, <a href="https://www.cs.princeton.edu/~blei/papers/Blei2012.pdf">Probabilistic topic models</a>, Commun. ACM, 2012.</li>
+<li>Blei et al., <a href="http://machinelearning.wustl.edu/mlpapers/paper_files/BleiNJ03.pdf">Latent Dirichlet allocation</a>, JMLR, 2003.</li>
+</ul>
+<li>Matrix completion</li>
+<ul>
+<li>Srebro et al., <a href="http://papers.nips.cc/paper/2655-maximum-margin-matrix-factorization.pdf">Maximum-margin matrix factorization</a>, NIPS 2005.</li>
+<li>Mazumder et al., <a href="https://web.stanford.edu/~hastie/Papers/mazumder10a.pdf">Spectral regularization algorithms for learning large incomplete matrices</a>, JMLR, 2010.</li>
+<li>Hastie et al., <a href="http://arxiv.org/pdf/1410.2596.pdf">Matrix completion and low-rank SVD via fast alternating least squares</a>, JMLR, 2015.</li>
+<li>Hu et al., <a href="http://yifanhu.net/PUB/cf.pdf">Collaborative filtering for implicit feedback datasets</a>, ICDM 2008.</li>
+<li>Lee et al., <a href="http://arxiv.org/pdf/1205.3193v1.pdf">A comparative study of collaborative filtering algorithms</a>.</li>
+</ul>
+<li>Randomized linear algebra</li>
+<ul>
+<li>Ailon and Chazelle, <a href="https://www.cs.princeton.edu/~chazelle/pubs/fasterdim-ac10.pdf">Faster dimension reduction</a>, Commun. ACM, 2010.</li>
+<li>Halko et al., <a href="http://arxiv.org/pdf/0909.4061v2.pdf">Finding structure with randomness: Probabilistic algorithms for constructing approximate matrix decompositions</a>, SIAM Review, 2011.</li>
+<li>Mahoney, <a href="http://arxiv.org/pdf/1104.5557.pdf">Randomized algorithms for matrices and data</a>, FTML, 2011.</li>
+<li>Woodruff, <a href="http://researcher.watson.ibm.com/researcher/files/us-dpwoodru/wNow.pdf">Sketching as a Tool for Numerical Linear Algebra</a>, FTTCS, 2014. </li>
+</ul>
+<li>Visualization methods</li>
+<ul>
+<li>Multidimensional scaling</li>
+<li>Tenenbaum et al., <a href="http://wearables.cc.gatech.edu/paper_of_week/isomap.pdf">A Global Geometric Framework for Nonlinear Dimensionality Reduction</a>, Science, 2000.</li>
+<li>Roweis and Saul, <a href="http://science.sciencemag.org/content/sci/290/5500/2323.full.pdf">Nonlinear Dimensionality Reduction by Locally Linear Embedding</a>, Science, 2000.</li>
+<li>Zhang and Zha, <a href="http://arxiv.org/pdf/cs/0212008.pdf">Principal manifolds and nonlinear dimension reduction via local tangent space alignment</a>, SISC, 2004.</li>
+<li>van der Maaten and Hinton, <a href="http://www.cs.toronto.edu/~hinton/absps/tsne.pdf">Visualizing data using t-SNE</a>, JMLR, 2008.</li>
+</ul>
+</ul>
+
+
+<hr>
+
+</div> <!-- /container -->
+
+</body>
+</html>

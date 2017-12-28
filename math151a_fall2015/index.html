@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+<!--  browser shouldn't cache page, until site is final -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+  
+<meta charset="utf-8">
+<title>Math 151A (Fall 2015)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Applied Numerical Methods (I)">
+<meta name="author" content="Da Kuang, Department of Mathematics, UCLA">
+
+<!-- Le styles -->
+<link href="../css/bootstrap.css" rel="stylesheet">
+<style>
+body {
+padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+.vis {
+color: #3366CC;
+}
+.data {
+color: #FF9900;
+}
+table#contact td{
+  border:none;
+}
+table#contact strong{
+  color: #333;
+}
+table#schedule {
+  font-size: 14px;
+}
+table#schedule td {
+  border-right: 1px dashed #ccc;
+}
+</style>
+<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+
+  
+<body>
+
+<div class="container">
+
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<ul class="nav">
+<li><a href="#syllabus">Syllabus</a></li>
+<li><a href="#homework">Homework</a></li>
+<li><a href="#schedule">Schedule</a></li>
+</ul>
+</div>
+</div>
+
+<div class="page-header" style="margin-bottom: 10px">
+<h1 style="margin-top:10px;"><span style="font-size:16px; font-weight: normal;">MATH 151A, Fall 2015</span><br/>Applied Numerical Methods (I)</h1>
+<span style="font-size:20px; line-height:1.5em;"><strong><a style="color:#444444;" href="http://www.ucla.edu">UCLA</a>, <a style="color:#444444;" href="http://www.math.ucla.edu">Department of Mathematics</a></strong></span><br>
+</div>
+
+
+<p><a href="https://www.math.ucla.edu/ugrad/courses/math/151A">General course description</a><br/>
+Instructor: <a href="http://math.ucla.edu/~dakuang/" style="color:#444;">Da Kuang</a><br/>
+TA: <a href="https://www.math.ucla.edu/people/grad/weizhu731" style="color:#444;">Wei Zhu</a>
+</p>
+
+<a name="syllabus"></a>    
+<h4>Syllabus</h4>
+<ul>
+<li>Floating-point system</li>
+<li>Nonlinear equations with one variable</li>
+<li>Interpolation methods</li>
+<li>Numerical integration</li>
+<li>Linear systems / LU factorization</li>
+<li>Matlab/Octave programming</li>
+</ul>
+
+<h4>Textbooks and references</h4>
+
+<ul class="unstyled">
+
+<li>(Officially) Required: R. L. Burden and J. D. Faires, Numerical analysis, <a href="http://www.amazon.com/Numerical-Analysis-Richard-L-Burden/dp/0538733519/">9th</a> or <a href="http://www.amazon.com/Numerical-Analysis-Richard-L-Burden/dp/1305253663">10th</a> edition.</li>
+<li>Recommended: Michael Heath, Scientific Computing, <a href="http://www.amazon.com/Scientific-Computing-Michael-T-Heath/dp/0072399104/">2nd</a> edition.</li>
+<br/>
+<li>A good summary (or cheat-sheet) of the required textbook in slides: <a href="https://math.berkeley.edu/~persson/128A">[link]</a></li>
+<li>A more practical treatment: Cleve Moler, <a href="http://www.mathworks.com/moler/chapters.html">Numerical Computing with Matlab</a>.</li>
+<li>Matlab tutorial: <a href="http://uk.mathworks.com/help/pdf_doc/matlab/getstart.pdf">[link]</a></li>
+<br/>
+<li>Additional references (posted here as the course proceeds):</li>
+<li>Floating-point system: <a href="http://www.seas.ucla.edu/~vandenbe/103/lectures/flpt.pdf">[Slides from EE103]</a></li>
+<li>Nonlinear equations with one variable: <a href="http://www.seas.ucla.edu/~vandenbe/103/lectures/nonlineqs.pdf">[Slides from EE103]</a></li>
+<li>LU factorization: <a href="http://www.seas.ucla.edu/~vandenbe/103/lectures/lu.pdf">[Slides from EE103]</a></li>
+<li>Cholesky factorization: <a href="http://www.seas.ucla.edu/~vandenbe/103/lectures/chol.pdf">[Slides from EE103]</a></li>
+<li>Vector norms: <a href="http://www.seas.ucla.edu/~vandenbe/103/lectures/vectors.pdf">[Slides from EE103]</a></li>
+<li>Matrix norms: <a href="http://www.seas.ucla.edu/~vandenbe/103/lectures/matrices.pdf">[Slides from EE103]</a></li>
+<li>Conditioning and stability: <a href="http://www.seas.ucla.edu/~vandenbe/103/lectures/accuracy.pdf">[Slides from EE103]</a></li>
+
+</ul>
+
+    
+<h4>Grading</h4>
+<ul>
+<li>60% Homework</li>
+<li>20% Midterms</li>
+<li>20% Final exam</li>
+</ul>
+ 
+
+<h4>Late Submissions Policy</h4>
+<ul>
+<li>No late homework allowed. However, there are no penalties for medical reasons or emergencies. You must submit a doctor's note or an official letter explaining the emergency.</li>
+</ul>
+
+<h4>Programming Environments</h4>
+<ul>
+<li>We will use <a href="http://www.pic.ucla.edu/frequently-asked-questions/">Matlab</a> or <a href="https://www.gnu.org/software/octave/download.html">Octave</a> for programming assignments.</li>
+</ul>
+
+
+    
+<a name="homework"></a>
+<h4>Homework</h4>
+
+Please note that while discussion is allowed and encouraged, individual students must write up their own answers and computer programs.
+<br/>
+All the students must observe the <a href="http://www.deanofstudents.ucla.edu/Portals/16/Documents/StudentGuide.pdf">conduct code</a>.
+<br/><br/>
+
+<ul>
+<li>[10%] <a href="homework/hw1.pdf">HW1</a></li>
+<li>[10%] <a href="homework/hw2.pdf">HW2</a></li>
+<li>[10%] <a href="homework/hw3.pdf">HW3</a></li>
+<li>[10%] <a href="homework/hw4.pdf">HW4</a></li>
+<li>[10%] <a href="homework/hw5.pdf">HW5</a></li>
+<li>[10%] <a href="homework/hw6.pdf">HW6</a></li>
+</ul>
+
+<h4>Exercise Sets</h4>
+<ul>
+<li><a href="homework/ex1.pdf">Exercise Set 1</a></li>
+<li><a href="homework/ex2.pdf">Exercise Set 2</a></li>
+</ul>
+
+<a name="schedule"></a>
+<h4>Schedule</h4>
+
+<table id="schedule" class="table table-hover table-condensed">
+<thead>
+<tr>
+<th>Date</th>
+<th>Mon</th>
+<th>Wed</th>
+<th>Fri</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="width:80px;"><br /><br />Sep 25</td>
+  <td></td>
+  <td></td>
+  <td><a href="lectures/lecture1_web.pdf">Course overview / Logistics</a></td>
+</tr>
+<tr>
+  <td style="width:80px;">Sep 28<br />Sep 30<br />Oct 2</td>
+  <td>Nonlinear equations<br /><a href="lectures/fixedpoint.pdf">(bisection, fixed-point)</a><br />Reading: BF 2.1, 2.2 / MH 5.2.1, 5.2.2 </td>
+  <td>Matlab/Octave introduction<br /><a href="examples/iris.txt">(example data set)</a><br /><b>HW1 out</b></td>
+  <td>Nonlinear equations<br />(convergence order and rates)<br />Reading: BF 2.4 / MH 5.1.2</td>
+</tr>
+<tr>
+  <td style="width:80px;">Oct 5<br />Oct 7<br />Oct 9</td>
+  <td>Nonlinear equations<br />(Newton's method)<br />Reading: BF 2.3 / MH 5.2.3</td>
+  <td>Nonlinear equations<br />(secant method)<br />Reading: BF 2.3 / MH 5.2.4<br /><b>HW1 due; HW2 out</b></td>
+  <td>Nonlinear equations<br />(summary, pitfalls)<br />Reading: BF 2.4 / MH 5.1.1</td>
+</tr>
+<tr>
+  <td style="width:80px;">Oct 12<br />Oct 14<br />Oct 16</td>
+  <td>Conditioning and stability<br />Reading: BF 7.1 / MH 1.2, 2.3.1</td>
+  <td>Floating-point numbers<br />Reading: BF 1.2 / MH 1.3<br /><b>HW2 due</b></td>
+  <td>Case study<br /><a href="lectures/midterm_review.pdf">Midterm review</a></td>
+</tr>
+<tr>
+  <td style="width:80px;">Oct 19<br />Oct 21<br />Oct 23</td>
+  <td><b>Midterm I</b> [10%]</td>
+  <td>Linear systems<br />(Gaussian elimination)<br />Reading: BF 6.1 / MH 2.2.1, 2.2.2<br /><b>HW3 out</b></td>
+  <td>Linear systems<br />(LU factorization)<br />Reading: BF 6.5 / MH 2.2.3</td>
+</tr>
+<tr>
+  <td style="width:80px;">Oct 26<br />Oct 28<br />Oct 30</td>
+  <td>Linear systems<br />(LU factorization)<br />Reading: BF 6.5 / MH 2.2.3</td>
+  <td>Linear systems<br />(pivoting)<br />Reading: BF 6.2 / MH 2.2.4<br /><b>HW3 due; HW4 out</b></td>
+  <td>Linear systems<br />(Cholesky factorization)<br />Reading: BF 6.6 / MH 2.4</td>
+</tr>
+<tr>
+  <td style="width:80px;">Nov 2<br />Nov 4<br />Nov 6</td>
+  <td>Linear systems<br />(Jacobi, Gauss-Seidel)<br /> Reading: BF 7.3 / MH 11.5.2, 11.5.3</td>
+  <td>Matrix norms<br />Reading: BF 7.1 / MH 2.3.2, 2.3.3<br /><b>HW4 due</b></td>
+  <td>Singular value decomposition (very briefly)<br />Midterm review<br />Reading: BF 9.6 / MH 4.5</td>
+</tr>
+<tr>
+  <td style="width:80px;">Nov 9<br />Nov 11<br />Nov 13</td>
+  <td><b>Midterm II</b> [10%]</td>
+  <td>(Veterans Day holiday)</td>
+  <td>Examples for SVD<br /><a href="lectures/pca.pdf">Principal component analysis</a><br /><a href="examples/ORL.mat">(Data)</a> <a href="examples/orl.m">(Script)</a></td>
+</tr>
+<tr>
+  <td style="width:80px;">Nov 16<br />Nov 18<br />Nov 20</td>
+  <td>Matrix condition number<br />Reading: BF 7.5 / MH 2.3.3<br /><b>HW5 out</b></td>
+  <td>Interpolation<br />(monomial, Lagrange)<br /><a href="examples/poly.m">Demo</a><br />Reading: BF 3.1 / MH 7.1 - 7.2.2</td>
+  <td>Interpolation<br />(Newton, cubic spline)<br />Reading: BF 3.3, 3.5 / MH 7.2.3, 7.3.2</td>
+</tr>
+<tr>
+  <td style="width:80px;">Nov 23<br />Nov 25<br />Nov 27</td>
+  <td>Numerical integration<br />(Newton-Cotes, composite rules)<br />Reading: BF 4.3, 4.4 / MH 8.2, 8.4.1<br /><b>HW5 due; HW6 out</b></td>
+  <td>(Cancelled)</td>
+  <td>(Thanksgiving)</td>
+</tr>
+<tr>
+  <td style="width:80px;">Nov 30<br />Dec 2<br />Dec 4</td>
+  <td>Numerical integration<br />(error analysis)</td>
+  <td>Numerical integration<br />(extrapolation methods)<br /><b>HW6 due</b></td>
+  <td>Demos for PCA and <a href="examples/population.m">cubic splines</a><br />Course review</td>
+</tr>
+<tr>
+  <td style="width:80px;">Dec 7<br /><br /></td>
+  <td><b>Final exam</b> [20%]<br /><b>3pm-6pm</b></td>
+  <td></td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+</div> <!-- /container -->
+
+</body>
+</html>

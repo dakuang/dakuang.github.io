@@ -1,0 +1,45 @@
+<style type="text/css">
+<!--
+.STYLE1 {font-family: "Courier New"}
+-->
+</style>
+<title>Bug-fix for kmeans in the statistics toolbox</title><p>by Da Kuang, Sep. 8, 2011</p>
+<p><strong>Bug-fix for kmeans in the statistics toolbox</strong></p>
+<p>Platform: Matlab 2009a/2009b (or even later versions) </p>
+<p>The <a href="http://www.mathworks.com/help/toolbox/stats/kmeans.html" target="_blank" class="STYLE1">kmeans</a> function in the statistics toolbox in the above Matlab versions has a bug when the <span class="STYLE1">EmptyAction</span> option is set to <span class="STYLE1">'drop'</span> (which means that the number of cluster requested is decreased whenever empty clusters emerge). In very rare cases, we receive the following error message (typically after a  empty-cluster-created warning):</p>
+<p class="STYLE1">??? Undefined function or variable &quot;idxBest&quot;.<br />
+  Error in ==&gt; kmeans at 390<br />
+idx = idxBest;</p>
+<p>After investigation, I found that this bug is related to a segment of code that guards against numerical rounding errors in the evaluation of SSE (sum of squared errors) and potentially dead-loop behavior. Therefore, this bug can also cause trouble when <span class="STYLE1">EmptyAction</span> has other values (e.g. <span class="STYLE1">'singleton'</span>). However, this guide is only intended to fix the bug related to <span class="STYLE1">EmptyAction=='drop'</span>. </p>
+<p>If you are confident that rounding errors are negligible when clustering your data, then simply deleting Lines 478-483 will work:</p>
+<p>Line 478: <span class="STYLE1">if prevtotsumD &lt;= totsumD</span><br />
+  Line 479: <span class="STYLE1">&nbsp;&nbsp;idx = previdx;</span><br />
+  Line 480: <span class="STYLE1">&nbsp;&nbsp;[C(changed,:), m(changed)] = gcentroids(X, idx, changed, distance);</span><br />
+  Line 481: <span class="STYLE1">&nbsp;&nbsp;iter = iter - 1;</span><br />
+  Line 482: <span class="STYLE1">&nbsp;&nbsp;break;</span><br />
+  Line 483: <span class="STYLE1">end</span></p>
+<p>However, a more secure strategy is:</p>
+<p><strong>1. replace the above segment with the following:</strong></p>
+<p class="STYLE1"> if prevtotsumD &lt;= totsumD<br />
+&nbsp;&nbsp;idx = previdx;<br />
+&nbsp;&nbsp;if drop_flag<br />
+&nbsp;&nbsp;&nbsp;&nbsp;changed = copy_changed;<br />
+&nbsp;&nbsp;end<br />
+&nbsp;&nbsp;[C(changed,:), m(changed)] = gcentroids(X, idx, changed, distance);<br />
+&nbsp;&nbsp;D(:,changed) = distfun(X, C(changed,:), distance, iter);<br />
+&nbsp;&nbsp;iter = iter - 1;<br />
+&nbsp;&nbsp;break;<br />
+end</p>
+<p><strong>2. add two statements:</strong></p>
+<p class="STYLE1">copy_changed = changed;<br />
+drop_flag = true; </p>
+<p>right after Line 439 <span class="STYLE1">D(:,empties) = NaN;</span></p>
+<p><strong>3. add a statement:</strong></p>
+<p class="STYLE1">drop_flag = false; </p>
+<p>to the blank Line 429. <span class="STYLE1"></span></p>
+<p>Finally, if the file  <span class="STYLE1">kmeans.m</span>  has been copied to your own directory, you will need to copy two other files to the same directory in order to run the fixed code smoothly:</p>
+<p class="STYLE1">$MATLAB/toolbox/stats/private/statgetargs.m<br />
+$MATLAB/toolbox/stats/private/statremovenan.m</p>
+<p>(<span class="STYLE1">$MATLAB</span> is the install directory containing version numbers, e.g. <span class="STYLE1">/opt/matlab/2009a</span> )</p>
+<p>&nbsp;</p>
+<p>Last updated: Sep. 10, 2011 </p>

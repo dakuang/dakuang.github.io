@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+<!--  browser shouldn't cache page, until site is final -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+  
+<meta charset="utf-8">
+<title>Computing for Data Analysis: Methods and Tools | CSE 6040, Fall'14 | Georgia Tech, College of Computing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A course that introduces relevant programming techniques for data analytics.">
+<meta name="author" content="Dr. Da Kuang and Prof. Duen Horng (Polo) Chau, School of Computational Science & Engineering, Georgia Tech">
+
+<!-- Le styles -->
+<link href="../css/bootstrap.css" rel="stylesheet">
+<style>
+body {
+padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+.vis {
+color: #3366CC;
+}
+.data {
+color: #FF9900;
+}
+table#contact td{
+  border:none;
+}
+table#contact strong{
+  color: #333;
+}
+table#schedule {
+  font-size: 14px;
+}
+table#schedule td {
+  border-right: 1px dashed #ccc;
+}
+</style>
+<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+
+  
+<body>
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<!--
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5374fc11556af0b6"></script>
+<script type="text/javascript">
+  addthis.layers({
+    'theme' : 'transparent',
+    'share' : {
+      'position' : 'left',
+      'numPreferredServices' : 4
+    }, 
+    'follow' : {
+      'services' : [
+        {'service': 'twitter', 'id': 'PoloChau'},
+        {'service': 'linkedin', 'id': 'polochau'},
+        {'service': 'youtube', 'id': 'polochaucmu'}
+      ]
+    }   
+  });
+</script>
+-->
+<!-- AddThis Smart Layers END -->
+
+
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<ul class="nav">
+<li><a href="#schedule">Schedule</a></li>
+<li><a href="#homework">Homework</a></li>
+<li><a href="#project">Project</a></li>
+<li><a href="#datasets">Datasets</a></li>
+</ul>
+</div>
+</div>
+
+
+<!--
+  <div style="font-size:12px; text-align:right; margin:5px 0px 10px;"><a href="http://poloclub.gatech.edu/" style="color: #999;">Polo Club of Data Science</a></div>
+-->
+
+<div class="container">
+
+
+<!--
+<div class="alert alert-error">
+This Fall'13 course offering has been canceled and rescheduled to Spring'14. Sorry for the inconvenience!</div>
+-->
+
+<!-- 
+<div class="alert alert-info">
+If you are not able to register for this class,
+please <a href="http://www.cc.gatech.edu/regdates">visit this page first</a>.
+</div>
+-->
+
+
+
+<div class="page-header" style="margin-bottom: 10px">
+<h1 style="margin-top:10px;"><span style="font-size:16px; font-weight: normal;">CSE 6040, Fall 2014</span><br/>Computing for Data Analytics: <span class="data">Methods</span> and <span class="vis">Tools</span></h1>
+<span style="font-size:20px; line-height:1.5em;"><strong><a style="color:#444444;" href="http://www.gatech.edu">Georgia Tech</a>, <a style="color:#444444;" href="http://www.cc.gatech.edu">College of Computing</a></strong></span><br>
+<span style="font-size:18px; line-height:1.5em;">
+4:30 - 6pm, <a href="https://goo.gl/maps/0ERDV" style="color:#444;">Ford ES&T Building</a> L1118, Wed &amp Fri<br/>
+<a href="http://www.cc.gatech.edu/~dkuang3/" style="color:#444;">Dr. Da Kuang</a><br/>
+<a href="http://www.cc.gatech.edu/~dchau/" style="color:#444;">Prof. Duen Horng (Polo) Chau</a></span>
+</div>
+
+
+
+<p>This course introduces relevant programming techniques for data analytics. Topics include programming languages, relevant software packages, good programming practices, linear algebra in data analytics, numerical computing, and 4~5 machine learning algorithms as running problems. After completing the course, students will gain the skills to implement a data analytics pipeline (data collection, data retrieval, data analysis, data visualization) and several "handy" machine learning algorithms.
+</p>
+
+    
+    
+<h4>Piazza Discussion Forum</h4>
+<p>
+We will use 
+<a href="https://piazza.com/gatech/fall2014/cse6040/home">Piazza</a>
+for discussion (e.g., homework, project).
+Post your questions there, and the teaching staff and your fellow classmates will be able to help answer them quickly. 
+You can also use Piazza to find project teammates.
+<p>
+T-square will only be used for submission of assignments and projects.
+
+
+<h4>Office Hours</h4>
+<table id="contact" class="table table-hover table-condensed" style="margin: 15px 0px;">
+
+<tr>
+<td style="width:80px;">Instructor</td>
+<td style="width:200px;"><a href="http://www.cc.gatech.edu/~dkuang3/">Da Kuang</a></td>
+<td>Thu, 2-3pm, Klaus 1315</td>
+</tr>
+
+<tr>
+<td>Instructor</td>
+<td><a href="http://www.cc.gatech.edu/~dchau/">Polo Chau</a></td>
+<td>Thu, 4-5pm, Klaus 1315</td>
+</tr>
+
+<tr>
+<td>TA</td>
+<td>Lianxiao (Shawn) Qiu</td>
+<td>Mon, 1-2pm, Klaus 2108</td>
+</tr>
+
+<!--
+<tr>
+<td><strong>Class meets</strong></td>
+<td>Tue, Thu 12:05 - 1:25, Klaus 1456</td>
+</tr>
+
+<tr>
+<td><strong>Discuss at</strong></td>
+<td><a href="https://piazza.com/gatech/spring2013/cse6242acs4803dva/home">Piazza</a></td>
+</tr>
+-->
+</table>    
+
+<h4>Prerequisites</h4>
+
+Students should have some experience in programming with any language, for example, working knowledge of variables, operators, statements, control flows, reference, functions, classes, etc., and should feel comfortable reading documentation.
+
+<h5>Additional formal prerequisites</h5>
+
+Undergraduate semester level CS 1371 (Computing for Engineers) or a different programming course, minimum grade of D.
+
+<a name="schedule"></a>
+<h4>Schedule (tentative)</h4>
+
+<table id="schedule" class="table table-hover table-condensed">
+<thead>
+<tr>
+<th colspan="2" style="text-align:center;">Date</th>
+<th>Topic</th>
+<th>Wed</th>
+<th>Fri</th>
+<th>Events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="width:20px;">Aug</td>
+  <td style="width:40px;">20, 22</td>
+  <td>* Course introduction<br/> <!-- project overview -->
+    * Course survey<br/>
+    * Introduction to Python and its data structures
+  </td>
+  <td><a href="lectures/6040_lecture1.pdf">Slides</a></td>
+  <td><a href="lectures/6040_lecture2.pdf">Slides</a></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td></td>
+  <td>27, 29</td>
+  <td> * Python exercises Q&amp;A <br/>
+      * Data collection
+      <ul>
+        <li>wget, urllib/urllib2, API</li>
+      </ul>
+  </td>
+  <td>&nbsp;</td>
+  <td><a href="lectures/6040_lecture3_part1.pdf">Slides</a></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>Sep</td>
+  <td>3, 5</td>
+  <td> * Data collection (cont'd)
+      <ul>
+        <li>BeautifulSoup</li>
+      </ul>
+	  * Topics in Python
+    <!--<li>How to present your analysis (to your boss, or for research)</li>-->
+  </td>
+  <td><a href="lectures/6040_lecture3_part2.pdf">Slides</a></td>
+  <td><a href="lectures/6040_lecture4.pdf">Slides</a></td>
+  <td>HW1 <a href="#homework">out</a> (Wed)</td>
+</tr>
+<tr>
+  <td></td>
+  <td>10, 12</td>
+  <td> * Charting/Visualization
+      <ul>
+        <li>Charting in R</li>
+      </ul>
+  </td>
+  <td>R resources <br/>
+        <a href='http://www.theanalysisofdata.com/computing/R.pdf'>(Link 1)</a>
+        <a href='http://www.theanalysisofdata.com/computing/graphics.pdf'>(Link 2)</a>
+        <a href='http://www.cookbook-r.com/Graphs/'>(Link 3)</a>
+  </td>
+  <td><a href="lectures/6040_lecture5.pdf">Slides</a></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td></td>
+  <td>17, 19</td>
+  <td>
+       * Data storage and retrieval in sqlite <br/>
+       * Basic linear algebra overview
+      <ul>
+        <li>Vectors, matrices</li>
+      </ul>
+  </td>
+  <td><a href="lectures/6040_lecture6.pdf">Slides</a></td>
+  <td><a href="lectures/6040_lecture7.pdf">Notes</a></td>
+  <td>HW1 due (Fri)</td>
+</tr>
+<tr>
+  <td></td>
+  <td>24, 26</td>
+  <td> * Dense and sparse matrices (including Numpy)<br/>
+  * Good programming practices
+  </td>
+  <td><a href="lectures/6040_lecture8.pdf">Slides</a></td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>Oct</td>
+  <td>1, 3</td>
+  <td>* Basic linear algebra overview
+      <ul>
+        <li>Matrix-vector multiplication</li>
+        <li>Norms</li>
+      </ul>
+  </td>
+  <td><a href="lectures/6040_lecture7.pdf">Notes</a></td>
+  <td><a href="lectures/6040_lecture7.pdf">Notes</a></td>
+  <td>HW2 <a href="#homework">out</a> (Mon)</td>
+</tr>
+<tr>
+  <td></td>
+  <td>8, 10</td>
+  <td> * Linear regression
+      <ul>
+        <li>Least squares</li>
+        <li>Computing Least squares</li>
+        <li>Case study</li>
+      </ul>
+  </td>
+  <td><a href="lectures/6040_lecture10.pdf">Notes</a></td>
+  <td><a href="examples/lecture10_scripts.zip">Scripts</a></td>
+  <td>HW2 due (Fri)<br/>
+      HW3 out (Sat)</td>
+</tr>
+<tr>
+  <td></td>
+  <td>15, 17</td>
+  <td> * Logistic regression
+      <ul>
+        <li>Regression vs. Classification</li>
+        <li>Gradient descent</li>
+        <li>Case study</li>
+      </ul>
+  </td>
+  <td><a href="lectures/6040_lecture11.pdf">Slides</a></td>
+  <td><a href="examples/logistic.zip">Scripts</a></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td></td>
+  <td>22, 24</td>
+  <td> * Computer architecture overview <br/>
+    * Vectorization in Numpy and R
+</td>
+  <td><a href="lectures/6040_lecture12.pdf">Slides</a></td>
+  <td><a href="examples/vectorize.zip">Scripts</a></td>
+  <td>HW3 due (Fri/Sat)</td>
+</tr>
+<tr>
+  <td></td>
+  <td>29, 31</td>
+  <td> * K-means clustering<br/>
+      * Project proposal presentations
+  </td>
+  <td><a href="lectures/6040_lecture13.pdf">Slides</a></td>
+  <td>&nbsp;</td>
+  <td>Project proposal due (Thu)</td>
+</tr>
+<tr>
+  <td>Nov</td>
+  <td>5, 7</td>
+  <td> * K-means clustering: Case studies<br/>
+       * Efficient implementation of K-means
+  </td>
+  <td><a href="examples/kmeans.zip">Scripts</a>
+      <a href="examples/README.txt">(README)</a></td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td></td>
+  <td>12, 14</td>
+  <td> * Numerical software stacks<br/>
+      * Singular value decomposition (SVD)
+  </td>
+  <td><a href="lectures/6040_lecture14.pdf">Slides</a></td>
+  <td><a href="lectures/6040_lecture15.pdf">Notes</a></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td></td>
+  <td>19, 21</td>
+  <td> * SVD, eigenvalue decomposition (EVD), and PCA<br/>
+      * Computing SVD, EVD and PCA
+  </td>
+  <td><a href="lectures/6040_lecture15.pdf">Notes</a></td>
+  <td>&nbsp;</td>
+  <td>Progress report due (Wed)</td>
+</tr>
+<tr>
+  <td></td>
+  <td>26, 28</td>
+  <td> (Thanksgiving holiday)
+  </td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>Dec</td>
+  <td>3, 5</td>
+  <td> * Latest research; popular topics <br/>
+   * Final project presentations</td>
+  <td><a href="lectures/6040_lecture-final.pdf">Slides</a></td>
+  <td>&nbsp;</td>
+  <td>Final report due (Thu)</td>
+</tr>
+</tbody>
+</table>
+
+
+<a name="grading"></a>
+<h4>Grading</h4>
+<ul>
+<li>10% Class and Piazza participation</li>
+<li>50% Homework</li>
+<li>40% Final project</li>
+</ul>
+ 
+
+<h4>Late Submissions Policy</h4>
+<ul>
+<li>No late homework allowed. However, there are no penalties for medical reasons or emergencies. You <em>must</em> submit a doctor's note or an official letter explaining the emergency.</li>
+</ul>
+
+
+<h4>Textbooks, references, and reading materials</h4>
+
+<ul class="unstyled">
+
+<li>None required.</li>
+
+<br/>
+
+<li>References for programming:
+<ul>        
+
+<li><a href="https://docs.python.org/2/tutorial">Python (official) tutorial</a>.</li>
+
+<li><a href="http://docs.oracle.com/javase/tutorial">Java (official) tutorial</a>.</li>
+
+<li><a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean code: A handbook of agile software craftsmanship</a> by Robert C. Martin.</li>
+
+<li><a href="http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672">Refactoring: Improving the design of existing code</a> by Martin Fowler.</li>
+
+<li><a href="http://www.amazon.com/Effective-Java-2nd-Joshua-Bloch/dp/0321356683">Effective Java (2nd edition)</a> by Joshua Bloch.</li>
+
+<li><a href="http://www.amazon.com/Programming-Pearls-Jon-Bentley/dp/8177588583">Programming pearls (2nd edition)</a> by Jon Bentley.</li>
+
+</ul>
+</li>
+
+<br/>
+
+<li>References for linear algebra / numerical computing:
+<ul>
+
+<li><a href="http://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617">Numerical linear algebra</a> by Lloyd N. Trefethen and David Bau, III (on <a href="http://books.google.com/books?id=bj-Lu6zjWbEC&printsec=frontcover&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false">Google Books</a>).</li>
+
+<li><a href="http://www.amazon.com/Applied-Numerical-Linear-Algebra-Demmel/dp/0898713897">Applied numerical linear algebra</a> by James W. Demmel (partially on <a href="http://books.google.com/books?id=fjC2d0odoi8C&printsec=frontcover&dq=Applied+Numerical+Linear+Algebra&hl=en&sa=X&ei=xqDiU-f4Henp8AGOtIDwBw&ved=0CDMQuwUwAA#v=onepage&q=Applied%20Numerical%20Linear%20Algebra&f=false">Google Books</a>).</li>
+</ul>
+</li>
+
+<br/>
+
+<li>References for "practical" machine learning:
+<ul>
+
+<li><a href="http://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1449319793">Python for data analysis</a> by Wes McKinney.</li>
+
+<li><a href="http://www.amazon.com/Mining-Social-Web-Facebook-LinkedIn/dp/1449367615">Mining the social web: Data mining Facebook, Twitter, LinkedIn, Google+, GitHub, and more (2nd edition)</a> by Matthew A. Russell (<a href="https://github.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition">code online</a>).</li>
+
+<li><a href="http://infolab.stanford.edu/~ullman/mmds.html">Mining of massive datasets</a> by Jure Leskovec, Anand Rajaraman, and Jeff Ullman (<a href="http://infolab.stanford.edu/~ullman/mmds.html">free online</a>).</li>
+</ul>
+</li>
+
+</ul>
+
+    
+<a name="homework"></a>
+<h4>Homework (tentative)</h4>
+
+Please note that while collaboration is allowed, individual collaborators *must* write up their own answers. 
+All GT students must observe the <a href="http://www.honor.gatech.edu/plugins/content/index.php?id=9">honor code</a>.
+
+
+<ul>
+<li>[10%] <a href="homework/HW1.pdf">HW1</a>: Collecting Yelp data using Python <a href="homework/api_starter.py">[starter code for Part 1]</a> <a href="homework/beautifulsoup_starter.py">[starter code for Part 2]</a></li>
+<li>[10%] <a href="homework/HW2.pdf">HW2</a>: Querying and plotting Yelp data</li>
+<li>[10%] <a href="homework/HW3.pdf">HW3</a>: Linear algebra exercises</li>
+<li>[10%] <a href="homework/HW4.pdf">HW4</a>: Estimating the running time</li>
+<li>[10%] <a name="homework">HW5</a></li>
+</ul>    
+            
+<a name="project"></a>
+<h4>Project</h4>
+Team project: 2-3 people.
+<a href="homework/project.pdf">Description and grading policy</a> available now! (proposal + presentation, progress report, final report + presentation)
+
+<a name="datasets"></a>
+<h4>Dataset Ideas</h4>
+<ul>
+<li><a href="http://www.freebase.com">Freebase</a>
+<li><a href="http://www.yelp.com/developers/documentation">Yelp</a>
+<li><a href="https://developers.google.com/apis-explorer/#p/">Numerous APIs from Google</a> (e.g., Maps, Freebase, YouTube, etc.)
+<li><a href="http://developer.trulia.com">Trulia</a>, <a href="http://www.zillow.com/howto/api/APIOverview.htm">Zillow</a>: real estate listing sites
+<li>Movies data: <a href="http://developer.rottentomatoes.com">Rotten Tomatoes</a>, <a href="http://stackoverflow.com/questions/1966503/does-imdb-provide-an-api">IMDB</a>
+
+<li><a href="http://www.soccerbase.com/">Dataset about soccer games, players, clubs</a>. <br>
+No API, but easy to scrape.<br>
+For a soccer player: transfer history, performance, nationality, birth date, etc.<br>
+For a soccer club: performance, squad, etc.<br>
+Thanks Ding!
+</li>
+
+<li>
+<a href="http://developer.nytimes.com/docs/read/article_search_api_v2">Article Search API from the New York Times (all the way back to 1851!)</a> (Thanks Guido!)
+</li>
+
+
+</ul>
+
+
+
+
+
+
+
+<h4>Auditors</h4>
+Auditors must first obtain instructor's permission of the instructor,
+then enroll in the course.
+The auditor must attend all lectures, and optionally complete the assignments.
+
+
+    
+
+
+
+<!--
+<h4>Previous offerings</h4>
+<a href="http://poloclub.gatech.edu/cse6242/2013spring">Spring 2013</a> - CSE 6242 / CS 4803-DVA – Polo Chau<br/>
+<a href="http://smlv.cc.gatech.edu/dava">Spring 2011</a> - CSE 8803-DVA / CS 4803-DVA - Guy Lebanon<br/>
+<a href="http://www.cc.gatech.edu/~lebanon/teaching/DAVA/">Spring 2010</a> - CSE 8803-DVA - Guy Lebanon<br/>
+-->
+
+
+    
+<h4>Acknowledgements & Related Classes</h4>
+ 
+Many thanks to our colleagues for sharing their course materials:
+<blockquote>Prof. Le Song - Introduction to Computational Data Analysis - <a href="http://www.cc.gatech.edu/~lsong/teaching/CX4240spring14.html">Spring 2014</a>
+</blockquote>
+
+<hr>
+
+<footer>
+<p style="font-size:12px;">&copy; 2014 <a href="http://www.gatech.edu"color:#444444;"">Georgia Tech</a></p>
+</footer>
+
+</div> <!-- /container -->
+
+
+</body>
+</html>
